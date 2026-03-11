@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AKHMETOV TEAM | Taekwondo ITF Uralsk</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(180deg,#000,#111,#000);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 20px;
+  border-bottom:3px solid red;
+  animation:fadeIn 1s ease forwards;
+}
+
+header h1{
+  font-size:52px;
+  letter-spacing:5px;
+}
+
+header p{
+  color:#bbb;
+  margin-top:10px;
+  font-size:18px;
+}
+
+/* BUTTON */
+.main-btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:18px 40px;
+  background:linear-gradient(45deg, #ff0000, #ff4d4d);
+  border-radius:12px;
+  font-size:20px;
+  font-weight:bold;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.main-btn:hover{
+  transform:scale(1.1);
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+/* CARD */
+.card{
+  background:#1c1c1c;
+  padding:40px;
+  border-radius:15px;
+  margin-bottom:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.8);
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+
+/* Fade-in animation */
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:red;
+  font-size:34px;
+}
+
+/* SCHEDULE */
+.schedule{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.schedule div{
+  background:linear-gradient(135deg,#222,#333);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.schedule div:hover{
+  background:#444;
+  transform:scale(1.05);
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  max-width:500px;
+  margin:auto;
+}
+
+input,select{
+  padding:16px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:8px;
+  background:#2b2b2b;
+  color:white;
+  font-size:16px;
+}
+
+button{
+  padding:18px;
+  background:linear-gradient(45deg,#ff0000,#ff4d4d);
+  border:none;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  font-size:18px;
+  line-height:2;
+}
+
+/* MAP */
+.map{
+  margin-top:25px;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  font-size:28px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
+/* FadeIn Keyframes */
+@keyframes fadeIn{
+  0%{opacity:0;transform:translateY(30px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AKHMETOV TEAM</h1>
+<p>Taekwondo ITF Training Center • Уральск 🥋</p>
+<a href="#form" class="main-btn">Записаться на тренировку</a>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>О клубе</h2>
+<p style="text-align:center;font-size:18px;line-height:1.8;">
+AKHMETOV TEAM — клуб таэквондо ITF в городе Уральск.  
+Мы обучаем детей и взрослых дисциплине, силе и технике Taekwondo.
+</p>
+</div>
+
+<div class="card">
+<h2>Расписание тренировок</h2>
+
+<h3>Пн / Ср / Пт</h3>
+<div class="schedule">
+<div>10:00 – 11:30</div>
+<div>16:00 – 17:30</div>
+<div>18:00 – 20:00 (Спец группа)</div>
+<div>20:00 – 21:30</div>
+</div>
+
+<br>
+<h3>Вт / Чт / Сб</h3>
+<div class="schedule">
+<div>18:00 – 19:30 (Детская)</div>
+<div>20:00 – 22:00 (Спец группа)</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Запись на тренировку</h2>
+<form id="form">
+<input type="text" id="name" placeholder="Имя спортсмена" required>
+<select id="time">
+<option>Пн Ср Пт — 10:00–11:30</option>
+<option>Пн Ср Пт — 16:00–17:30</option>
+<option>Пн Ср Пт — 18:00–20:00</option>
+<option>Пн Ср Пт — 20:00–21:30</option>
+<option>Вт Чт Сб — 18:00–19:30</option>
+<option>Вт Чт Сб — 20:00–22:00</option>
+</select>
+<input type="date" id="date" required>
+<button type="submit">Отправить заявку</button>
+</form>
+</div>
+
+<div class="card">
+<h2>Контакты</h2>
+<div class="contact">
+📍 Адрес: Абулхаирхана 2, Уральск<br>
+📱 WhatsApp: +7 771 409 34 41
+</div>
+
+<div class="map">
+<iframe src="https://maps.google.com/maps?q=Абулхаирхана%202%20Уральск&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300"></iframe>
+</div>
+</div>
+
+</div>
+
+<footer>
+AKHMETOV TEAM • International Taekwon-Do Federation • Уральск
+</footer>
+
+<a class="whatsapp" href="https://wa.me/87714093441" target="_blank">💬</a>
+
+<script>
+// WhatsApp Form
+document.getElementById("form").addEventListener("submit",function(e){
+  e.preventDefault();
+  let name=document.getElementById("name").value.trim();
+  let time=document.getElementById("time").value;
+  let date=document.getElementById("date").value;
+
+  if(!name){
+    alert("Пожалуйста, введите имя спортсмена");
+    return;
+  }
+
+  let message=`Заявка AKHMETOV TEAM %0A%0AИмя: ${name}%0AВремя: ${time}%0AДата: ${date}`;
+  let phone="87714093441";
+  let url=`https://wa.me/${phone}?text=${message}`;
+  window.open(url,"_blank");
+});
+
+// Scroll Animation for cards
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, {threshold:0.2});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
